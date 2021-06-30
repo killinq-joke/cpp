@@ -6,7 +6,7 @@
 /*   By: ztouzri <ztouzri@student.42nice.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/30 17:21:19 by ztouzri           #+#    #+#             */
-/*   Updated: 2021/06/30 18:30:01 by ztouzri          ###   ########.fr       */
+/*   Updated: 2021/06/30 18:34:58 by ztouzri          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,21 +29,44 @@ void	ft_putstr(char *str)
 	}
 }
 
+char	ft_toupper(char c)
+{
+	if (c >= 97 && c <= 122)
+		c -= 32;
+	return (c);
+}
+
+char	*strtoupper(char *str)
+{
+	int	i;
+
+	i = 0;
+	while (str[i])
+	{
+		str[i] = ft_toupper(str[i]);
+		i++;
+	}
+	return (str);
+}
+
 int	main(int ac, char **av)
 {
 	int		i;
-	char	str[] = "* LOUD AND UNBEARABLE FEEDBACK NOISE *\n";
+	char	basestr[] = "* LOUD AND UNBEARABLE FEEDBACK NOISE *";
 
 	if (ac < 2)
-		ft_putstr(str);
+		ft_putstr(basestr);
 	else
 	{
 		i = 1;
 		while (i < ac)
 		{
-			ft_putstr(av[i]);
+			ft_putstr(strtoupper(av[i]));
+			if (i < ac - 1)
+				ft_putchar(' ');
 			i++;
 		}
 	}
+	ft_putchar('\n');
 	return (0);
 }
