@@ -5,7 +5,7 @@ CFLAGS	= -Wall -Wextra -Werror
 SRCS	= main.cpp
 OBJS	= $(SRCS:cpp=o)
 
-%o: %cpp
+%.o: %.cpp
 	$(CC) $(CFLAGS) -c $<
 
 .PHONY: all clean fclean re
