@@ -6,34 +6,62 @@
 /*   By: ztouzri <ztouzri@student.42nice.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/30 17:21:19 by ztouzri           #+#    #+#             */
-/*   Updated: 2021/06/30 18:34:58 by ztouzri          ###   ########.fr       */
+/*   Updated: 2021/07/01 10:44:08by ztouzri          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
+#include <stdio.h>
 
-void	ft_putchar(char c)
-{
-	write(1, &c, 1);
-}
-
-void	ft_putstr(char *str)
+int	ft_strlen(char *str)
 {
 	int	i;
 
 	i = 0;
 	while (str[i])
-	{
-		ft_putchar(str[i]);
 		i++;
-	}
+	return (i);
 }
 
-char	ft_toupper(char c)
+void	ft_putstr(char *str)
 {
-	if (c >= 97 && c <= 122)
-		c -= 32;
-	return (c);
+	int	i;
+	int	j;
+	int	lastspace;
+
+	i = 0;
+	while (str[i] && str[i] == ' ')
+		i++;
+	lastspace = -1;
+	j = i;
+	while (j < ft_strlen(str))
+	{
+		if (str[j] == ' ')
+		{
+			lastspace = j;
+			while (str[j] == ' ')
+				j++;
+		}
+		else
+			lastspace = -1;
+		j++;
+	}
+	while (str[i] && i != lastspace)
+		write(1, &str[i++], 1);
+}
+
+bool	ft_otherisin(char *str, char c)
+{
+	int	i;
+
+	i = 0;
+	while (i < ft_strlen(str))
+	{
+		if (str[i] != c)
+			return (true);
+		i++;
+	}
+	return (false);
 }
 
 char	*strtoupper(char *str)
@@ -43,7 +71,8 @@ char	*strtoupper(char *str)
 	i = 0;
 	while (str[i])
 	{
-		str[i] = ft_toupper(str[i]);
+		if (str[i] >= 97 && str[i] <= 122)
+			str[i] -= 32;
 		i++;
 	}
 	return (str);
@@ -62,11 +91,11 @@ int	main(int ac, char **av)
 		while (i < ac)
 		{
 			ft_putstr(strtoupper(av[i]));
-			if (i < ac - 1)
-				ft_putchar(' ');
+			if (i < ac - 1 && ft_otherisin(av[i + 1], ' '))
+				write(1, " ", 1);
 			i++;
 		}
 	}
-	ft_putchar('\n');
+	write(1, "\n", 1);
 	return (0);
 }
