@@ -6,7 +6,7 @@
 /*   By: ztouzri <ztouzri@student.42nice.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/05 11:16:17 by ztouzri           #+#    #+#             */
-/*   Updated: 2021/07/05 11:32:49 by ztouzri          ###   ########.fr       */
+/*   Updated: 2021/07/05 12:52:37 ztouzri          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,6 +35,6 @@ void	PhoneBook::add(Contact newcontact)
 			this->contacts[i] = this->contacts[i + 1];
 			i++;
 		}
-		this->contacts[contactnum] = newcontact;
+		this->contacts[7] = newcontact;
 	}
 }
