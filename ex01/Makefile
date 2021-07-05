@@ -2,7 +2,7 @@ NAME	= contact2000
 CC		= clang++
 CFLAGS	= -Wall -Wextra -Werror
 
-SRCS	= main.cpp
+SRCS	= main.cpp phonebook.cpp
 OBJS	= $(SRCS:cpp=o)
 
 %.o: %.cpp

@@ -1,36 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   contacts.hpp                                       :+:      :+:    :+:   */
+/*   phonebook.cpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ztouzri <ztouzri@student.42nice.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/07/02 19:58:11 by ztouzri           #+#    #+#             */
-/*   Updated: 2021/07/05 11:25:50 by ztouzri          ###   ########.fr       */
+/*   Created: 2021/07/05 11:16:17 by ztouzri           #+#    #+#             */
+/*   Updated: 2021/07/05 11:32:49 by ztouzri          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef CONTACTS_HPP
-# define CONTACTS_HPP
-# include <string>
-# include <iostream>
+#include "contacts.hpp"
 
-class Contact {
+void	PhoneBook::Constructor(void)
+{
+	this->contactnum = 0;
+}
 
-	public:
-		std::string firstname;
-		std::string lastname;
-		std::string nickname;
-		std::string phonenumber;
-		std::string darkestsecret;
-};
+void	PhoneBook::add(Contact newcontact)
+{
+	int		i;
+	Contact	tmp;
 
-class PhoneBook {
-	public:
-		void	Constructor(void);
-		int		contactnum;
-		Contact	contacts[8];
-		void	add(Contact);
-};
-
-#endif
+	if (this->contactnum < 8)
+	{
+		this->contacts[contactnum] = newcontact;
+		this->contactnum++;
+	}
+	else
+	{
+		i = 0;
+		while (i < 7)
+		{
+			this->contacts[i] = this->contacts[i + 1];
+			i++;
+		}
+		this->contacts[contactnum] = newcontact;
+	}
+}
