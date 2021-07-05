@@ -6,7 +6,7 @@
 /*   By: ztouzri <ztouzri@student.42nice.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/01 11:09:32 by ztouzri           #+#    #+#             */
-/*   Updated: 2021/07/05 13:58:50 by ztouzri          ###   ########.fr       */
+/*   Updated: 2021/07/05 14:21:37 by ztouzri          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,7 +51,9 @@ void	serviceADD(PhoneBook *phonebook)
 
 void	serviceSEARCH(PhoneBook *phonebook)
 {
-	int	i;
+	int			i;
+	int			index;
+	std::string	strindex;
 
 	std::cout << "     index| firstname|  lastname|  nickname|" << std::endl;
 	i = 0;
@@ -67,19 +69,32 @@ void	serviceSEARCH(PhoneBook *phonebook)
 		std::cout << std::endl;
 		i++;
 	}
+	std::cout << "Which index do you want to search:" << std::endl;
+	std::cin >> strindex;
+	index = strindex[0] - '0';
+	if (strindex.size() != 1 || !isdigit(strindex[0]) || index < 1 || index > phonebook->contactnum)
+		std::cout << "NONE EXISTING INDEX" << std::endl;
+	else
+	{
+		std::cout << "first name: " << phonebook->contacts[index - 1].firstname << std::endl;
+		std::cout << "last name: " << phonebook->contacts[index - 1].lastname << std::endl;
+		std::cout << "nickname: " << phonebook->contacts[index - 1].nickname << std::endl;
+		std::cout << "phone number: " << phonebook->contacts[index - 1].phonenumber << std::endl;
+		std::cout << "darkest secret: " << phonebook->contacts[index - 1].darkestsecret << std::endl;
+	}
 }
 
 int	main(void)
 {
 	PhoneBook	phonebook;
-	std::string	name;
+	std::string	command;
 
-	while (name != "EXIT")
+	while (command != "EXIT")
 	{
-		std::cin >> name;
-		if (name == "ADD")
+		std::cin >> command;
+		if (command == "ADD")
 			serviceADD(&phonebook);
-		else if (name == "SEARCH")
+		else if (command == "SEARCH")
 			serviceSEARCH(&phonebook);
 	}
 	return (0);
