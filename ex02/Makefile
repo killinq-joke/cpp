@@ -5,19 +5,19 @@
 #                                                     +:+ +:+         +:+      #
 #    By: ztouzri <ztouzri@student.42nice.fr>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2021/07/05 14:22:25 by ztouzri           #+#    #+#              #
-#    Updated: 2021/07/05 14:22:26 by ztouzri          ###   ########.fr        #
+#    Created: 2021/07/05 14:22:19 by ztouzri           #+#    #+#              #
+#    Updated: 2021/07/05 16:19:27 by ztouzri          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME	= contact2000
+NAME	= account
 CC		= clang++
 CFLAGS	= -Wall -Wextra -Werror
 
-SRCS	= main.cpp phonebook.cpp
+SRCS	= Account.cpp tests.cpp
 OBJS	= $(SRCS:cpp=o)
 
-%.o: %.cpp
+%o: %cpp
 	$(CC) $(CFLAGS) -c $<
 
 .PHONY: all clean fclean re

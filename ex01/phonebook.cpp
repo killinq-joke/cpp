@@ -12,9 +12,10 @@
 
 #include "contacts.hpp"
 
-void	PhoneBook::Constructor(void)
-{
-	this->contactnum = 0;
+PhoneBook::PhoneBook(void) : contactnum( 0 ) {
+}
+
+PhoneBook::~PhoneBook(void) {
 }
 
 void	PhoneBook::add(Contact newcontact)

@@ -6,7 +6,7 @@
 /*   By: ztouzri <ztouzri@student.42nice.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/02 19:58:11 by ztouzri           #+#    #+#             */
-/*   Updated: 2021/07/05 11:25:50 by ztouzri          ###   ########.fr       */
+/*   Updated: 2021/07/05 16:14:59 by ztouzri          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,8 @@ class Contact {
 
 class PhoneBook {
 	public:
-		void	Constructor(void);
+		PhoneBook(void);
+		~PhoneBook(void);
 		int		contactnum;
 		Contact	contacts[8];
 		void	add(Contact);
