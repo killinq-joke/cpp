@@ -6,7 +6,7 @@
 /*   By: ztouzri <ztouzri@student.42nice.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/05 14:24:35 by ztouzri           #+#    #+#             */
-/*   Updated: 2021/07/08 15:11:51 by ztouzri          ###   ########.fr       */
+/*   Updated: 2021/07/08 15:31:37 by ztouzri          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,6 +45,7 @@ Account::Account(int initial_deposit) : _amount(initial_deposit), _nbDeposits(0)
 	Account::_totalNbDeposits += _nbDeposits;
 	Account::_nbAccounts++;
 	this->_accountIndex = i++;
+	this->_nbWithdrawals = 0;
 }
 
 Account::~Account(void)
