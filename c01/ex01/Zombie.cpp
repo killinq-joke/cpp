@@ -1,24 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Zombie.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ztouzri <ztouzri@student.42nice.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/07/08 16:33:57 by ztouzri           #+#    #+#             */
-/*   Updated: 2021/07/08 18:45:01 by ztouzri          ###   ########.fr       */
+/*   Created: 2021/07/08 16:34:10 by ztouzri           #+#    #+#             */
+/*   Updated: 2021/07/08 18:44:24 by ztouzri          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Zombie.hpp"
 
-int	main( void )
+Zombie::Zombie()
 {
-	Zombie	*nzomb;
+}
 
-	randomChump("zak");
-	nzomb = new Zombie("zombjpillet");
-	nzomb->announce();
-	delete nzomb;
-	return (0);
+Zombie::~Zombie( void )
+{
+	std::cout << "Bruhhhhhhhhhhhh" << std::endl;
+}
+
+void	Zombie::announce( void )
+{
+	std::cout << this->name << " BraiiiiiiinnnzzzZ..." << std::endl;
 }

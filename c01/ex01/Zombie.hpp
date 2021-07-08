@@ -1,24 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Zombie.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ztouzri <ztouzri@student.42nice.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/07/08 16:33:57 by ztouzri           #+#    #+#             */
-/*   Updated: 2021/07/08 18:45:01 by ztouzri          ###   ########.fr       */
+/*   Created: 2021/07/08 16:34:12 by ztouzri           #+#    #+#             */
+/*   Updated: 2021/07/08 18:47:45 by ztouzri          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Zombie.hpp"
+#include <iostream>
 
-int	main( void )
+class Zombie
 {
-	Zombie	*nzomb;
 
-	randomChump("zak");
-	nzomb = new Zombie("zombjpillet");
-	nzomb->announce();
-	delete nzomb;
-	return (0);
-}
+public:
+	Zombie(void);
+	~Zombie();
+	void	announce( void );
+
+	std::string	name;
+};
+
+Zombie*	zombieHorde( int N, std::string name );
+void randomChump( std::string name );
