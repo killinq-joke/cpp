@@ -6,7 +6,7 @@
 /*   By: ztouzri <ztouzri@student.42nice.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/05 14:24:35 by ztouzri           #+#    #+#             */
-/*   Updated: 2021/07/05 18:06:04 by ztouzri          ###   ########.fr       */
+/*   Updated: 2021/07/08 14:14:57 by ztouzri          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,8 @@
 
 Account::Account(int initial_deposit) : _amount(initial_deposit), _nbDeposits(1)
 {
-	this->_totalAmount = _amount;
-	this->_totalNbDeposits = _nbDeposits;
+	Account::_totalAmount = _amount;
+	Account::_totalNbDeposits = _nbDeposits;
 	std::cout << "constructor" << std::endl;
 }
 
@@ -27,7 +27,7 @@ Account::~Account(void)
 
 void	Account::makeDeposit(int deposit)
 {
-	this->_totalNbDeposits++;
+	Account::_totalNbDeposits++;
 }
 
 bool	Account::makeWithdrawal( int withdrawal )
@@ -37,7 +37,7 @@ bool	Account::makeWithdrawal( int withdrawal )
 	this->_totalNbWithdrawals++;
 }
 
-int		Account::checkAmount( void ) const
+int	Account::checkAmount( void ) const
 {
 
 }
@@ -47,26 +47,27 @@ void	Account::displayStatus( void ) const
 
 }
 
-static int	Account::getNbAccounts( void )
+int	Account::getNbAccounts( void )
 {
+	return (Account::_nbAccounts);
 }
 
-static int	Account::getTotalAmount( void )
+int	Account::getTotalAmount( void )
 {
-
+	return (Account::_totalAmount);
 }
 
-static int	getNbDeposits( void )
+int	Account::getNbDeposits( void )
 {
-
+	return (Account::_totalNbDeposits);
 }
 
-static int	getNbWithdrawals( void )
+int	Account::getNbWithdrawals( void )
 {
-
+	return (Account::_totalNbWithdrawals);
 }
 
-static void	displayAccountsInfos( void )
+void	displayAccountsInfos( void )
 {
 
 }
