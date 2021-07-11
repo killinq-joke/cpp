@@ -6,11 +6,13 @@
 /*   By: ztouzri <ztouzri@student.42nice.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/08 16:34:12 by ztouzri           #+#    #+#             */
-/*   Updated: 2021/07/08 18:47:45 by ztouzri          ###   ########.fr       */
+/*   Updated: 2021/07/08 20:28:55 by ztouzri          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <iostream>
+#ifndef ZOMBIE_HPP
+# define ZOMBIE_HPP
+# include <iostream>
 
 class Zombie
 {
@@ -25,3 +27,5 @@ public:
 
 Zombie*	zombieHorde( int N, std::string name );
 void randomChump( std::string name );
+
+#endif
