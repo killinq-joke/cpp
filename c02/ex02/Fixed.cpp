@@ -6,7 +6,7 @@
 /*   By: mout <mout@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/12 19:26:34 by ztouzri           #+#    #+#             */
-/*   Updated: 2021/07/13 17:06:55 by mout             ###   ########.fr       */
+/*   Updated: 2021/07/13 17:27:30 by mout             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -107,6 +107,16 @@ bool		operator<(Fixed const & f1, Fixed const & f2)
 bool		operator>(Fixed const & f1, Fixed const & f2)
 {
 	return (f1.toFloat() > f2.toFloat());
+}
+
+bool		operator<=(Fixed const & f1, Fixed const & f2)
+{
+	return (f1.toFloat() <= f2.toFloat());
+}
+
+bool		operator>=(Fixed const & f1, Fixed const & f2)
+{
+	return (f1.toFloat() >= f2.toFloat());
 }
 
 ostream&	operator<<(ostream& o, Fixed const & f1)
