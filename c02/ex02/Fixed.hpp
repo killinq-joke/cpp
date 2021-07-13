@@ -6,7 +6,7 @@
 /*   By: mout <mout@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/12 19:26:37 by ztouzri           #+#    #+#             */
-/*   Updated: 2021/07/13 17:26:27 by mout             ###   ########.fr       */
+/*   Updated: 2021/07/13 17:30:13 by mout             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,6 +46,8 @@ bool		operator<(Fixed const & f1, Fixed const & f2);
 bool		operator>(Fixed const & f1, Fixed const & f2);
 bool		operator<=(Fixed const & f1, Fixed const & f2);
 bool		operator>=(Fixed const & f1, Fixed const & f2);
+bool		operator==(Fixed const & f1, Fixed const & f2);
+bool		operator!=(Fixed const & f1, Fixed const & f2);
 ostream&	operator<<(ostream& o, Fixed const & f1);
 
 #endif
