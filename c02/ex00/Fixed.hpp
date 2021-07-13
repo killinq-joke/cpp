@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Fixed.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ztouzri <ztouzri@student.42.fr>            +#+  +:+       +#+        */
+/*   By: mout <mout@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/12 19:26:37 by ztouzri           #+#    #+#             */
-/*   Updated: 2021/07/12 22:38:01 by ztouzri          ###   ########.fr       */
+/*   Updated: 2021/07/13 13:50:52 by mout             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,8 @@ public:
 	~Fixed(void);
 	int		getRawBits( void ) const;
 	void	setRawBits( int const raw );
+
+	Fixed&	operator=(Fixed const & f1);
 
 private:
 	int					_value;
