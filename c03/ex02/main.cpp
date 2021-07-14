@@ -1,32 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ScavTrap.cpp                                       :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ztouzri <ztouzri@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/07/14 12:22:26 by ztouzri           #+#    #+#             */
-/*   Updated: 2021/07/14 14:49:52 by ztouzri          ###   ########.fr       */
+/*   Created: 2021/07/14 10:49:57 by ztouzri           #+#    #+#             */
+/*   Updated: 2021/07/14 14:57:43 by ztouzri          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ScavTrap.hpp"
+#include "FragTrap.hpp"
 
-ScavTrap::ScavTrap(string name)
+int	main()
 {
-	this->_name = name;
-	this->_hitpoints = 100;
-	this->_energypoints = 50;
-	this->_attackdamage = 20;
-	cout << "scav constructor called" << endl;
-}
+	FragTrap	fragtrap("zak");
 
-ScavTrap::~ScavTrap(void)
-{
-	cout << "scav destructor called" << endl;
-}
-
-void	ScavTrap::guardGate(void)
-{
-	cout << this->_name << " have enterred in Gate keeper mode" << endl;
+	fragtrap.attack("kmacquet");
+	fragtrap.takeDamage(11);
+	fragtrap.beRepaired(20);
+	return (0);
 }

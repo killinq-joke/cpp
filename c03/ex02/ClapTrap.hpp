@@ -1,32 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ScavTrap.cpp                                       :+:      :+:    :+:   */
+/*   ClapTrap.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ztouzri <ztouzri@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/07/14 12:22:26 by ztouzri           #+#    #+#             */
-/*   Updated: 2021/07/14 14:49:52 by ztouzri          ###   ########.fr       */
+/*   Created: 2021/07/14 10:52:37 by ztouzri           #+#    #+#             */
+/*   Updated: 2021/07/14 14:40:00 by ztouzri          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ScavTrap.hpp"
+#ifndef CLAPTRAP_H
+# define CLAPTRAP_H
+# include <iostream>
 
-ScavTrap::ScavTrap(string name)
-{
-	this->_name = name;
-	this->_hitpoints = 100;
-	this->_energypoints = 50;
-	this->_attackdamage = 20;
-	cout << "scav constructor called" << endl;
-}
+using namespace std;
 
-ScavTrap::~ScavTrap(void)
+class	ClapTrap
 {
-	cout << "scav destructor called" << endl;
-}
 
-void	ScavTrap::guardGate(void)
-{
-	cout << this->_name << " have enterred in Gate keeper mode" << endl;
-}
+public:
+	ClapTrap(void);
+	ClapTrap(string name);
+	~ClapTrap(void);
+
+	void	attack(std::string const & target);
+	void	takeDamage(unsigned int amount);
+	void	beRepaired(unsigned int amount);
+
+protected:
+	string	_name;
+	int		_hitpoints;
+	int		_energypoints;
+	int		_attackdamage;
+};
+#endif

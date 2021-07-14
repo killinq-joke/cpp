@@ -1,32 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ScavTrap.cpp                                       :+:      :+:    :+:   */
+/*   FragTrap.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ztouzri <ztouzri@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/07/14 12:22:26 by ztouzri           #+#    #+#             */
-/*   Updated: 2021/07/14 14:49:52 by ztouzri          ###   ########.fr       */
+/*   Created: 2021/07/14 14:47:07 by ztouzri           #+#    #+#             */
+/*   Updated: 2021/07/14 15:00:32 by ztouzri          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ScavTrap.hpp"
+#include "FragTrap.hpp"
 
-ScavTrap::ScavTrap(string name)
+FragTrap::FragTrap(string name)
 {
 	this->_name = name;
 	this->_hitpoints = 100;
-	this->_energypoints = 50;
-	this->_attackdamage = 20;
-	cout << "scav constructor called" << endl;
+	this->_energypoints = 100;
+	this->_attackdamage = 30;
+	cout << "frag constructor called" << endl;
 }
 
-ScavTrap::~ScavTrap(void)
+FragTrap::~FragTrap(void)
 {
-	cout << "scav destructor called" << endl;
+	cout << "frag destructor called" << endl;
 }
 
-void	ScavTrap::guardGate(void)
+void	FragTrap::highFivesGuys(void)
 {
-	cout << this->_name << " have enterred in Gate keeper mode" << endl;
+	cout << this->_name << " requests a positive high fives!" << endl;
 }
