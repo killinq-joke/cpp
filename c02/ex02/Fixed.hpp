@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Fixed.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mout <mout@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: ztouzri <ztouzri@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/12 19:26:37 by ztouzri           #+#    #+#             */
-/*   Updated: 2021/07/13 17:30:13 by mout             ###   ########.fr       */
+/*   Updated: 2021/07/14 09:20:09 by ztouzri          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,7 @@ public:
 	Fixed&			operator++(void);
 	Fixed			operator++(int);
 	static float	max(Fixed const & f1, Fixed const & f2);
+	static float	min(Fixed const & f1, Fixed const & f2);
 
 private:
 	int					_value;

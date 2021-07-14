@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mout <mout@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: ztouzri <ztouzri@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/12 19:26:18 by ztouzri           #+#    #+#             */
-/*   Updated: 2021/07/13 17:07:02 by mout             ###   ########.fr       */
+/*   Updated: 2021/07/14 09:21:32 by ztouzri          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,5 +25,6 @@ int main( void ) {
 	cout << a << endl;
 	cout << b << endl;
 	cout << Fixed::max( a, b ) << endl;
+	cout << Fixed::min( a, b ) << endl;
 	return 0;
 }

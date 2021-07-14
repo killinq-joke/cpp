@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Fixed.cpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mout <mout@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: ztouzri <ztouzri@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/12 19:26:34 by ztouzri           #+#    #+#             */
-/*   Updated: 2021/07/13 17:29:51 by mout             ###   ########.fr       */
+/*   Updated: 2021/07/14 09:21:20 by ztouzri          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,12 +60,20 @@ float	Fixed::toFloat() const
 	return (this->_fvalue);
 }
 
+float	Fixed::min(Fixed const & f1, Fixed const & f2)
+{
+	if (f1 < f2)
+		return (f1.toFloat());
+	else
+		return (f2.toFloat());
+}
+
 float	Fixed::max(Fixed const & f1, Fixed const & f2)
 {
-	if (f1._fvalue > f2._fvalue)
-		return (f1._fvalue);
+	if (f1 > f2)
+		return (f1.toFloat());
 	else
-		return (f2._fvalue);
+		return (f2.toFloat());
 }
 
 Fixed&	Fixed::operator=(Fixed const & f1)
@@ -79,8 +87,8 @@ Fixed&	Fixed::operator=(Fixed const & f1)
 
 Fixed&	Fixed::operator++(void)
 {
-	this->_value++;
-	this->_fvalue++;
+	this->_fvalue += 0.00000489999 + 1;
+	this->_value = this->_fvalue;
 	return (*this);
 }
 
