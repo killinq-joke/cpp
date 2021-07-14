@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   contacts.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ztouzri <ztouzri@student.42nice.fr>        +#+  +:+       +#+        */
+/*   By: ztouzri <ztouzri@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/02 19:58:11 by ztouzri           #+#    #+#             */
-/*   Updated: 2021/07/05 16:14:59 by ztouzri          ###   ########.fr       */
+/*   Updated: 2021/07/14 18:54:24 by ztouzri          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,23 +15,40 @@
 # include <string>
 # include <iostream>
 
+using namespace std;
+
 class Contact {
 
-	public:
-		std::string firstname;
-		std::string lastname;
-		std::string nickname;
-		std::string phonenumber;
-		std::string darkestsecret;
+public:
+	string	getFirstName(void);
+	string	getLastName(void);
+	string	getNickName(void);
+	string	getPhoneNumber(void);
+	string	getDarkestSecret(void);
+	void	setFirstName(string firstname);
+	void	setLastName(string lastname);
+	void	setNickName(string nickname);
+	void	setPhoneNumber(string phonenumber);
+	void	setDarkestSecret(string darkestsecret);
+
+private:
+	string	_firstname;
+	string	_lastname;
+	string	_nickname;
+	string	_phonenumber;
+	string	_darkestsecret;
+
 };
 
 class PhoneBook {
-	public:
-		PhoneBook(void);
-		~PhoneBook(void);
-		int		contactnum;
-		Contact	contacts[8];
-		void	add(Contact);
+
+public:
+	PhoneBook(void);
+	~PhoneBook(void);
+	int		contactnum;
+	Contact	contacts[8];
+	void	add(Contact);
+
 };
 
 #endif

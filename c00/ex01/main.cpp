@@ -3,18 +3,18 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ztouzri <ztouzri@student.42nice.fr>        +#+  +:+       +#+        */
+/*   By: ztouzri <ztouzri@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/01 11:09:32 by ztouzri           #+#    #+#             */
-/*   Updated: 2021/07/05 14:21:37 by ztouzri          ###   ########.fr       */
+/*   Updated: 2021/07/14 19:20:37 by ztouzri          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "contacts.hpp"
 
-void	strformat(std::string str)
+void	strformat(string str)
 {
-	std::string cpy;
+	string cpy;
 	int	i;
 
 	i = str.size();
@@ -23,79 +23,107 @@ void	strformat(std::string str)
 	{
 		while (i < 10)
 		{
-			std::cout << " ";
+			cout << " ";
 			i++;
 		}
 	}
 	else
 		cpy[9] = '.';
-	std::cout << cpy;
+	cout << cpy;
 }
 
-void	serviceADD(PhoneBook *phonebook)
+string	readString(istream& stream)
+{
+	string	str;
+
+	stream >> str;
+	return (str);
+}
+
+int		serviceADD(PhoneBook *phonebook)
 {
 	Contact		newcontact;
 
-	std::cout << "Enter first name:" << std::endl;
-	std::cin >> newcontact.firstname;
-	std::cout << "Enter last name:" << std::endl;
-	std::cin >> newcontact.lastname;
-	std::cout << "Enter nickname:" << std::endl;
-	std::cin >> newcontact.nickname;
-	std::cout << "Enter phonenumber:" << std::endl;
-	std::cin >> newcontact.phonenumber;
-	std::cout << "Enter darkest secret:" << std::endl;
-	std::cin >> newcontact.darkestsecret;
+	cout << "Enter first name:" << endl;
+	newcontact.setFirstName(readString(cin));
+	if (cin.eof())
+		return (0);
+	cout << "Enter last name:" << endl;
+	newcontact.setLastName(readString(cin));
+	if (cin.eof())
+		return (0);
+	cout << "Enter nickname:" << endl;
+	newcontact.setNickName(readString(cin));
+	if (cin.eof())
+		return (0);
+	cout << "Enter phonenumber:" << endl;
+	newcontact.setPhoneNumber(readString(cin));
+	if (cin.eof())
+		return (0);
+	cout << "Enter darkest secret:" << endl;
+	newcontact.setDarkestSecret(readString(cin));
+	if (cin.eof())
+		return (0);
 	phonebook->add(newcontact);
+	return (1);
 }
 
-void	serviceSEARCH(PhoneBook *phonebook)
+int		serviceSEARCH(PhoneBook *phonebook)
 {
 	int			i;
 	int			index;
-	std::string	strindex;
+	string	strindex;
 
-	std::cout << "     index| firstname|  lastname|  nickname|" << std::endl;
+	cout << "     index| firstname|  lastname|  nickname|" << endl;
 	i = 0;
 	while (i < phonebook->contactnum)
 	{
-		strformat(std::to_string(i + 1));
-		std::cout << "|";
-		strformat(phonebook->contacts[i].firstname);
-		std::cout << "|";
-		strformat(phonebook->contacts[i].lastname);
-		std::cout << "|";
-		strformat(phonebook->contacts[i].nickname);
-		std::cout << std::endl;
+		strformat(to_string(i + 1));
+		cout << "|";
+		strformat(phonebook->contacts[i].getFirstName());
+		cout << "|";
+		strformat(phonebook->contacts[i].getLastName());
+		cout << "|";
+		strformat(phonebook->contacts[i].getNickName());
+		cout << endl;
 		i++;
 	}
-	std::cout << "Which index do you want to search:" << std::endl;
-	std::cin >> strindex;
+	cout << "Which index do you want to search:" << endl;
+	cin >> strindex;
+	if (cin.peek() == EOF)
+		return (0);
 	index = strindex[0] - '0';
 	if (strindex.size() != 1 || !isdigit(strindex[0]) || index < 1 || index > phonebook->contactnum)
-		std::cout << "NONE EXISTING INDEX" << std::endl;
+		cout << "NONE EXISTING INDEX" << endl;
 	else
 	{
-		std::cout << "first name: " << phonebook->contacts[index - 1].firstname << std::endl;
-		std::cout << "last name: " << phonebook->contacts[index - 1].lastname << std::endl;
-		std::cout << "nickname: " << phonebook->contacts[index - 1].nickname << std::endl;
-		std::cout << "phone number: " << phonebook->contacts[index - 1].phonenumber << std::endl;
-		std::cout << "darkest secret: " << phonebook->contacts[index - 1].darkestsecret << std::endl;
+		cout << "first name: " << phonebook->contacts[index - 1].getFirstName() << endl;
+		cout << "last name: " << phonebook->contacts[index - 1].getLastName() << endl;
+		cout << "nickname: " << phonebook->contacts[index - 1].getNickName() << endl;
+		cout << "phone number: " << phonebook->contacts[index - 1].getPhoneNumber() << endl;
+		cout << "darkest secret: " << phonebook->contacts[index - 1].getDarkestSecret() << endl;
 	}
+	return (1);
 }
 
 int	main(void)
 {
 	PhoneBook	phonebook;
-	std::string	command;
+	string	command;
 
 	while (command != "EXIT")
 	{
-		std::cin >> command;
+		cin >> command;
+		if (cin.eof())
+			return (1);
 		if (command == "ADD")
-			serviceADD(&phonebook);
+		{
+			if (!serviceADD(&phonebook))
+				return (1);
+		}
 		else if (command == "SEARCH")
-			serviceSEARCH(&phonebook);
+			if (!serviceSEARCH(&phonebook))
+				return (1);
 	}
 	return (0);
 }

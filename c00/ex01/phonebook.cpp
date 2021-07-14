@@ -12,10 +12,62 @@
 
 #include "contacts.hpp"
 
-PhoneBook::PhoneBook(void) : contactnum( 0 ) {
+PhoneBook::PhoneBook(void) : contactnum(0)
+{
 }
 
-PhoneBook::~PhoneBook(void) {
+PhoneBook::~PhoneBook(void)
+{
+}
+
+string	Contact::getFirstName(void)
+{
+	return (this->_firstname);
+}
+
+string	Contact::getLastName(void)
+{
+	return (this->_lastname);
+}
+
+string	Contact::getNickName(void)
+{
+	return (this->_nickname);
+}
+
+string	Contact::getPhoneNumber(void)
+{
+	return (this->_phonenumber);
+}
+
+string	Contact::getDarkestSecret(void)
+{
+	return (this->_darkestsecret);
+}
+
+void	Contact::setFirstName(string firstname)
+{
+	this->_firstname = firstname;
+}
+
+void	Contact::setLastName(string lastname)
+{
+	this->_lastname = lastname;
+}
+
+void	Contact::setNickName(string nickname)
+{
+	this->_nickname = nickname;
+}
+
+void	Contact::setPhoneNumber(string phonenumber)
+{
+	this->_phonenumber = phonenumber;
+}
+
+void	Contact::setDarkestSecret(string darkestsecret)
+{
+	this->_darkestsecret = darkestsecret;
 }
 
 void	PhoneBook::add(Contact newcontact)
