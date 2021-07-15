@@ -6,7 +6,7 @@
 /*   By: ztouzri <ztouzri@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/14 15:06:23 by ztouzri           #+#    #+#             */
-/*   Updated: 2021/07/14 18:04:32 by ztouzri          ###   ########.fr       */
+/*   Updated: 2021/07/15 12:14:05 by ztouzri          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,7 @@ public:
 
 	void	attack(string const & target) { ScavTrap::attack(target); };
 	void	displaystats(void);
+	void	whoAmI();
 private:
 	string	_name;
 	int		_attackdamage;
