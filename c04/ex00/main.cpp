@@ -6,7 +6,7 @@
 /*   By: ztouzri <ztouzri@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/15 16:49:36 by ztouzri           #+#    #+#             */
-/*   Updated: 2021/07/15 18:14:08 by ztouzri          ###   ########.fr       */
+/*   Updated: 2021/07/15 18:29:58 by ztouzri          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@
 int main(void)
 {
 	Sorcerer	sorc("Zak", "Mage");
+	Sorcerer	cpy(sorc);
 	Victim		vict("Ed");
 	Peon		peon("Wawa");
 

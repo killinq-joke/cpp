@@ -6,7 +6,7 @@
 /*   By: ztouzri <ztouzri@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/15 16:49:19 by ztouzri           #+#    #+#             */
-/*   Updated: 2021/07/15 17:38:11 by ztouzri          ###   ########.fr       */
+/*   Updated: 2021/07/15 18:28:12 by ztouzri          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,8 @@ class Sorcerer
 
 public:
 	Sorcerer(string name, string title);
-	~Sorcerer();
+	Sorcerer(Sorcerer const &);
+	~Sorcerer(void);
 
 	string	introduce(bool) const;
 	string	getName(void) const;

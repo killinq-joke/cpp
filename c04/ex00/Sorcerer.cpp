@@ -6,7 +6,7 @@
 /*   By: ztouzri <ztouzri@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/15 16:49:22 by ztouzri           #+#    #+#             */
-/*   Updated: 2021/07/15 18:13:41 by ztouzri          ###   ########.fr       */
+/*   Updated: 2021/07/15 18:29:25 by ztouzri          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,10 @@ Sorcerer::Sorcerer(string name, string title)
 	this->_name = name;
 	this->_title = title;
     cout << this->getName() + ", " + this->getTitle() + ", is born!" << endl;
+}
+
+Sorcerer::Sorcerer(Sorcerer const &s1) : _name(s1.getName()), _title(s1.getTitle())
+{
 }
 
 Sorcerer::~Sorcerer()
