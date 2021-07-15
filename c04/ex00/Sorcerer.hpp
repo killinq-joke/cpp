@@ -6,7 +6,7 @@
 /*   By: ztouzri <ztouzri@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/15 16:49:19 by ztouzri           #+#    #+#             */
-/*   Updated: 2021/07/15 18:28:12 by ztouzri          ###   ########.fr       */
+/*   Updated: 2021/07/15 18:33:42 by ztouzri          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,7 @@ public:
 	string	getName(void) const;
 	string	getTitle(void) const;
 	void	polymorph(Victim const &) const;
+	Sorcerer&	operator=(Sorcerer const &);
 
 private:
 	string	_name;

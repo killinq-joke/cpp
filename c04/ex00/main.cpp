@@ -6,7 +6,7 @@
 /*   By: ztouzri <ztouzri@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/15 16:49:36 by ztouzri           #+#    #+#             */
-/*   Updated: 2021/07/15 18:29:58 by ztouzri          ###   ########.fr       */
+/*   Updated: 2021/07/15 18:33:27 by ztouzri          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,10 +18,13 @@ int main(void)
 {
 	Sorcerer	sorc("Zak", "Mage");
 	Sorcerer	cpy(sorc);
+	Sorcerer&	a = sorc;
 	Victim		vict("Ed");
 	Peon		peon("Wawa");
 
-	cout << sorc << vict << peon;
+	// a = sorc;
+
+	cout << sorc << a << vict << peon;
 	
 	sorc.polymorph(vict);
 	sorc.polymorph(peon);
