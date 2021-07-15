@@ -6,7 +6,7 @@
 /*   By: ztouzri <ztouzri@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/15 20:06:42 by ztouzri           #+#    #+#             */
-/*   Updated: 2021/07/15 21:43:27 by ztouzri          ###   ########.fr       */
+/*   Updated: 2021/07/15 22:33:54 by ztouzri          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 # define PLASMARIFLE_HPP
 # include "AWeapon.hpp"
 
-class	PlasmaRifle : public AWeapon
+class	PlasmaRifle : virtual public AWeapon
 {
 
 public:
