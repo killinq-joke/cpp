@@ -6,7 +6,7 @@
 /*   By: ztouzri <ztouzri@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/15 16:49:19 by ztouzri           #+#    #+#             */
-/*   Updated: 2021/07/15 17:18:48 by ztouzri          ###   ########.fr       */
+/*   Updated: 2021/07/15 17:20:30 by ztouzri          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,8 @@ public:
 	~Sorcerer();
 
 	string	introduce(bool) const;
+	string	getName(void) const;
+	string	getTitle(void) const;
 
 private:
 	string	_name;

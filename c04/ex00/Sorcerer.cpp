@@ -6,7 +6,7 @@
 /*   By: ztouzri <ztouzri@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/15 16:49:22 by ztouzri           #+#    #+#             */
-/*   Updated: 2021/07/15 17:18:36 by ztouzri          ###   ########.fr       */
+/*   Updated: 2021/07/15 17:22:51 by ztouzri          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,21 +16,29 @@ Sorcerer::Sorcerer(string name, string title)
 {
 	this->_name = name;
 	this->_title = title;
-    cout << this->_name + ", " + this->_title + ", is born!" << endl;
+    cout << this->getName() + ", " + this->getTitle() + ", is born!" << endl;
 }
 
 Sorcerer::~Sorcerer()
 {
-    cout << this->_name + ", " + this->_title + ", is dead. Consequences will never be the same!" << endl;
+    cout << this->getName() + ", " + this->getTitle() + ", is dead. Consequences will never be the same!" << endl;
 }
 
 string	Sorcerer::introduce(bool isOstream) const
 {
 	if (!isOstream)
-		cout << "I am " + this->_name + ", " + this->_title + ", and I like ponies!" << endl;
-	return ("I am " + this->_name + ", " + this->_title + ", and I like ponies!");
+		cout << "I am " + this->getName() + ", " + this->getTitle() + ", and I like ponies!" << endl;
+	return ("I am " + this->getName() + ", " + this->getTitle() + ", and I like ponies!");
+}
+string	Sorcerer::getName(void) const
+{
+	return (this->_name);
 }
 
+string	Sorcerer::getTitle(void) const
+{
+	return (this->_title);
+}
 
 ostream&	operator<<(ostream& o, Sorcerer const & s1)
 {
