@@ -6,7 +6,7 @@
 /*   By: ztouzri <ztouzri@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/14 10:49:57 by ztouzri           #+#    #+#             */
-/*   Updated: 2021/07/15 11:45:58 by ztouzri          ###   ########.fr       */
+/*   Updated: 2021/07/15 14:00:07 by ztouzri          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,10 @@ int	main()
 
 	diamondtrap.attack("kmacquet");
 	diamondtrap.displaystats();
-	// diamondtrap.takeDamage(11);
-	// diamondtrap.beRepaired(20);
+	diamondtrap.whoAmI();
+	diamondtrap.takeDamage(11);
+	diamondtrap.beRepaired(20);
+	diamondtrap.highFivesGuys();
+	diamondtrap.guardGate();
 	return (0);
 }

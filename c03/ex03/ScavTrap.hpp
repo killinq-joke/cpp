@@ -6,7 +6,7 @@
 /*   By: ztouzri <ztouzri@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/14 12:22:58 by ztouzri           #+#    #+#             */
-/*   Updated: 2021/07/15 12:04:49 by ztouzri          ###   ########.fr       */
+/*   Updated: 2021/07/15 15:53:39 by ztouzri          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,10 @@ public:
 	~ScavTrap(void);
 
 	void	guardGate(void);
+
+protected:
+	int		_energypoints;
+	int		_hitpoints;
 };
 
 #endif
