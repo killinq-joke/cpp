@@ -6,7 +6,7 @@
 /*   By: ztouzri <ztouzri@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/15 16:49:22 by ztouzri           #+#    #+#             */
-/*   Updated: 2021/07/15 17:22:51 by ztouzri          ###   ########.fr       */
+/*   Updated: 2021/07/15 17:38:04 by ztouzri          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,6 +38,11 @@ string	Sorcerer::getName(void) const
 string	Sorcerer::getTitle(void) const
 {
 	return (this->_title);
+}
+
+void	Sorcerer::polymorph(Victim const & v1) const
+{
+	v1.getPolymorphed();
 }
 
 ostream&	operator<<(ostream& o, Sorcerer const & s1)
