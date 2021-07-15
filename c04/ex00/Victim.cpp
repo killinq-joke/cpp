@@ -12,10 +12,20 @@
 
 #include "Victim.hpp"
 
-Victim::Victim(string name)
+Victim::Victim(string name) : _name(name)
 {
-	this->_name = name;
 	cout << "Some random victim called " + this->getName() + " just appeared!" << endl;
+}
+
+Victim::Victim(Victim const & v1) : _name(v1.getName())
+{
+}
+
+Victim&	Victim::operator=(Victim const & v1)
+{
+	this->_name = v1.getName();
+
+	return (*this);
 }
 
 Victim::~Victim(void)
