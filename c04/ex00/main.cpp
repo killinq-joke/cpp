@@ -6,7 +6,7 @@
 /*   By: ztouzri <ztouzri@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/15 16:49:36 by ztouzri           #+#    #+#             */
-/*   Updated: 2021/07/15 17:58:51 by ztouzri          ###   ########.fr       */
+/*   Updated: 2021/07/15 18:14:08 by ztouzri          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ int main(void)
 	Victim		vict("Ed");
 	Peon		peon("Wawa");
 
-	cout << sorc << endl;
+	cout << sorc << vict << peon;
 	
 	sorc.polymorph(vict);
 	sorc.polymorph(peon);

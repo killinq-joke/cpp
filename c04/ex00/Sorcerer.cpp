@@ -6,7 +6,7 @@
 /*   By: ztouzri <ztouzri@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/15 16:49:22 by ztouzri           #+#    #+#             */
-/*   Updated: 2021/07/15 17:38:04 by ztouzri          ###   ########.fr       */
+/*   Updated: 2021/07/15 18:13:41 by ztouzri          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ string	Sorcerer::introduce(bool isOstream) const
 {
 	if (!isOstream)
 		cout << "I am " + this->getName() + ", " + this->getTitle() + ", and I like ponies!" << endl;
-	return ("I am " + this->getName() + ", " + this->getTitle() + ", and I like ponies!");
+	return ("I am " + this->getName() + ", " + this->getTitle() + ", and I like ponies!\n");
 }
 string	Sorcerer::getName(void) const
 {

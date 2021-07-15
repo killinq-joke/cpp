@@ -6,7 +6,7 @@
 /*   By: ztouzri <ztouzri@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/15 16:49:43 by ztouzri           #+#    #+#             */
-/*   Updated: 2021/07/15 17:59:51 by ztouzri          ###   ########.fr       */
+/*   Updated: 2021/07/15 18:12:41 by ztouzri          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,12 +24,14 @@ public:
 	~Victim(void);
 
 	string	getName(void) const;
-	void	introduce(void) const;
+	string	introduce(bool isOstream) const;
 	virtual void	getPolymorphed(void) const;
 
 protected:
 	string	_name;
 
 };
+
+ostream&	operator<<(ostream& o, Victim const & v1);
 
 #endif

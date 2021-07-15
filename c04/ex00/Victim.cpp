@@ -28,12 +28,20 @@ string	Victim::getName(void) const
 	return (this->_name);
 }
 
-void	Victim::introduce(void) const
+string	Victim::introduce(bool isOstream) const
 {
-	cout << "I'm " + this->getName() + " and I like otters!" << endl;
+	if (!isOstream)
+		cout << "I'm " + this->getName() + " and I like otters!" << endl;
+	return ("I'm " + this->getName() + " and I like otters!\n");
 }
 
 void	Victim::getPolymorphed(void) const
 {
 	cout << this->getName() << " has been turned into a cute little sheep!" << endl;
+}
+
+ostream&	operator<<(ostream& o, Victim const & v1)
+{
+	o << v1.introduce(true);
+	return (o);
 }
