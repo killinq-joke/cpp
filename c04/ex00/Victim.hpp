@@ -6,7 +6,12 @@
 /*   By: ztouzri <ztouzri@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/15 16:49:43 by ztouzri           #+#    #+#             */
-/*   Updated: 2021/07/15 16:49:46 by ztouzri          ###   ########.fr       */
+/*   Updated: 2021/07/15 16:53:17 by ztouzri          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+
+#ifndef VICTIM_HPP
+# define VICTIM_HPP
+
+#endif

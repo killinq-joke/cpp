@@ -6,7 +6,18 @@
 /*   By: ztouzri <ztouzri@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/15 16:49:36 by ztouzri           #+#    #+#             */
-/*   Updated: 2021/07/15 16:49:37 by ztouzri          ###   ########.fr       */
+/*   Updated: 2021/07/15 17:13:47 by ztouzri          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "Sorcerer.hpp"
+#include "Peon.hpp"
+#include "Victim.hpp"
+
+int main(void)
+{
+	Sorcerer	sorc("zak", "Mage");
+
+	cout << sorc << endl;
+	return (0);
+}
