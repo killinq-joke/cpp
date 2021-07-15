@@ -6,15 +6,15 @@
 #    By: ztouzri <ztouzri@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/07/14 10:33:35 by ztouzri           #+#    #+#              #
-#    Updated: 2021/07/15 18:17:56 by ztouzri          ###   ########.fr        #
+#    Updated: 2021/07/15 20:05:33 by ztouzri          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME	= 
+NAME	= wow
 CC		= clang++
 CFLAGS	= -Wall -Werror -Wextra
 
-SRCS	= main.cpp Sorcerer.cpp Peon.cpp Victim.cpp
+SRCS	= main.cpp AWeapon.cpp Character.cpp Enemy.cpp PlasmaRifle.cpp PowerFist.cpp RadScorpion.cpp SuperMutant.cpp 
 OBJS	= $(SRCS:cpp=o)
 
 .PHONY: all clean fclean re
