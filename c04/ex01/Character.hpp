@@ -6,7 +6,7 @@
 /*   By: ztouzri <ztouzri@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/15 20:06:29 by ztouzri           #+#    #+#             */
-/*   Updated: 2021/07/16 01:04:58 by ztouzri          ###   ########.fr       */
+/*   Updated: 2021/07/16 03:13:05 by ztouzri          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,7 @@ class Character
 private:
 	string	_name;
 	int		_ap;
+	AWeapon	*_weapon;
 
 public:
 	Character(string const & name);
@@ -30,6 +31,7 @@ public:
 	void	equip(AWeapon*);
 	void	attack(Enemy*);
 	string	getName(void) const;
+	string	getWeaponName(void) const;
 	int		getAP(void) const;
 	void	setAP(int ap);
 
