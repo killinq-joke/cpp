@@ -6,7 +6,7 @@
 /*   By: ztouzri <ztouzri@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/15 20:06:27 by ztouzri           #+#    #+#             */
-/*   Updated: 2021/07/16 03:52:18 by ztouzri          ###   ########.fr       */
+/*   Updated: 2021/07/16 17:44:44 by ztouzri          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,10 +27,21 @@ void	Character::equip(AWeapon* weapon)
 
 void	Character::attack(Enemy* enemy)
 {
+	if (enemy == NULL)
+		return ;
 	if (this->isWeaponEquipped() && this->getAP() >= this->_weapon->getAPCost())
 	{
 		cout << this->getName() + " attacks " + enemy->getType() + " with a " + this->_weapon->getName() << endl;
 		this->setAP(this->getAP() - this->_weapon->getAPCost());
+		this->_weapon->attack();
+		enemy->setHP(enemy->getHP() - this->_weapon->getDamage());
+		if (enemy->getHP() <= 0)
+		{
+			cout << enemy << endl;
+			delete enemy;
+			enemy = NULL;
+			// cout << enemy << endl;
+		}
 	}
 }
 bool	Character::isWeaponEquipped(void) const

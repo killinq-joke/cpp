@@ -6,7 +6,7 @@
 /*   By: ztouzri <ztouzri@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/15 20:06:54 by ztouzri           #+#    #+#             */
-/*   Updated: 2021/07/15 23:34:55 by ztouzri          ###   ########.fr       */
+/*   Updated: 2021/07/16 16:02:02 by ztouzri          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 # define SUPERMUTANT_HPP
 # include "Enemy.hpp"
 
-class SuperMutant : virtual public Enemy
+class SuperMutant : public Enemy
 {
 
 public:

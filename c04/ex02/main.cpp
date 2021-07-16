@@ -1,23 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   RadScorpion.cpp                                    :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ztouzri <ztouzri@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/07/15 20:06:47 by ztouzri           #+#    #+#             */
-/*   Updated: 2021/07/16 15:23:02 by ztouzri          ###   ########.fr       */
+/*   Created: 2021/07/16 17:49:15 by ztouzri           #+#    #+#             */
+/*   Updated: 2021/07/16 17:49:49 by ztouzri          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "RadScorpion.hpp"
-
-RadScorpion::RadScorpion(void) : Enemy(80, "RadScorpion")
+int	main(void)
 {
-	cout << "* click click click *" << endl;
-}
-
-RadScorpion::~RadScorpion(void)
-{
-	cout << "* SPROTCH *" << endl;
+	return (0);
 }

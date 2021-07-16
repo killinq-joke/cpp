@@ -1,23 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   RadScorpion.cpp                                    :+:      :+:    :+:   */
+/*   ISquad.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ztouzri <ztouzri@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/07/15 20:06:47 by ztouzri           #+#    #+#             */
-/*   Updated: 2021/07/16 15:23:02 by ztouzri          ###   ########.fr       */
+/*   Created: 2021/07/16 17:49:23 by ztouzri           #+#    #+#             */
+/*   Updated: 2021/07/16 17:51:28 by ztouzri          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "RadScorpion.hpp"
+#ifndef ISQUAD_HPP
+# define ISQUAD_HPP
+# include "ISpaceMarine.hpp"
 
-RadScorpion::RadScorpion(void) : Enemy(80, "RadScorpion")
+class ISquad
 {
-	cout << "* click click click *" << endl;
-}
 
-RadScorpion::~RadScorpion(void)
-{
-	cout << "* SPROTCH *" << endl;
-}
+public:
+	virtual ~ISquad() {}
+	virtual int getCount() const = 0;
+	virtual ISpaceMarine* getUnit(int) const = 0;
+	virtual int push(ISpaceMarine*) = 0;
+
+};
+
+#endif

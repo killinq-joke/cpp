@@ -6,7 +6,7 @@
 /*   By: ztouzri <ztouzri@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/15 20:06:35 by ztouzri           #+#    #+#             */
-/*   Updated: 2021/07/15 23:26:00 by ztouzri          ###   ########.fr       */
+/*   Updated: 2021/07/16 15:48:38 by ztouzri          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ protected:
 	
 public:
 	Enemy(int hp, string const & type);
-	~Enemy(void);
+	virtual ~Enemy(void);
 
 	string			getType(void) const;
 	int				getHP(void) const;

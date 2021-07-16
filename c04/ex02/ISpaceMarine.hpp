@@ -1,23 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   RadScorpion.cpp                                    :+:      :+:    :+:   */
+/*   ISpaceMarine.hpp                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ztouzri <ztouzri@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/07/15 20:06:47 by ztouzri           #+#    #+#             */
-/*   Updated: 2021/07/16 15:23:02 by ztouzri          ###   ########.fr       */
+/*   Created: 2021/07/16 17:49:21 by ztouzri           #+#    #+#             */
+/*   Updated: 2021/07/16 17:52:20 by ztouzri          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "RadScorpion.hpp"
+#ifndef ISPACEMARINE_HPP
+# define ISPACEMARINE_HPP
 
-RadScorpion::RadScorpion(void) : Enemy(80, "RadScorpion")
+class ISpaceMarine
 {
-	cout << "* click click click *" << endl;
-}
 
-RadScorpion::~RadScorpion(void)
-{
-	cout << "* SPROTCH *" << endl;
-}
+public:
+	virtual ~ISpaceMarine() {}
+	virtual ISpaceMarine* clone() const = 0;
+	virtual void battleCry() const = 0;
+	virtual void rangedAttack() const = 0;
+	virtual void meleeAttack() const = 0;
+
+};
+
+#endif

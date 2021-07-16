@@ -6,7 +6,7 @@
 /*   By: ztouzri <ztouzri@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/15 20:06:30 by ztouzri           #+#    #+#             */
-/*   Updated: 2021/07/15 23:48:54 by ztouzri          ###   ########.fr       */
+/*   Updated: 2021/07/16 15:22:37 by ztouzri          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,4 +39,6 @@ void	Enemy::takeDamage(int dmg)
 {
 	if (dmg > 0)
 		this->setHP(this->getHP() - dmg);
+	// if (this->getHP() < 0)
+	// 	this->setHP(0);
 }

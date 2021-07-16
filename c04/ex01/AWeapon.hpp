@@ -6,7 +6,7 @@
 /*   By: ztouzri <ztouzri@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/15 20:06:24 by ztouzri           #+#    #+#             */
-/*   Updated: 2021/07/15 20:29:50 by ztouzri          ###   ########.fr       */
+/*   Updated: 2021/07/16 16:06:20 by ztouzri          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ protected:
 public:
 	AWeapon(string const & name, int apcost, int damage);
 	AWeapon(AWeapon const & a1);
-	~AWeapon(void);
+	virtual	~AWeapon(void);
 
 	AWeapon&		operator=(AWeapon const & a1);
 	string			getName(void) const;
