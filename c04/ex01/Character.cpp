@@ -6,7 +6,7 @@
 /*   By: ztouzri <ztouzri@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/15 20:06:27 by ztouzri           #+#    #+#             */
-/*   Updated: 2021/07/16 03:13:18 by ztouzri          ###   ########.fr       */
+/*   Updated: 2021/07/16 03:52:18 by ztouzri          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,17 @@ void	Character::equip(AWeapon* weapon)
 
 void	Character::attack(Enemy* enemy)
 {
-	cout << this->getName() + " attacks " + enemy->getType() + " with a " + this->_weapon->getName() << endl;
+	if (this->isWeaponEquipped() && this->getAP() >= this->_weapon->getAPCost())
+	{
+		cout << this->getName() + " attacks " + enemy->getType() + " with a " + this->_weapon->getName() << endl;
+		this->setAP(this->getAP() - this->_weapon->getAPCost());
+	}
+}
+bool	Character::isWeaponEquipped(void) const
+{
+	if (this->_weapon)
+		return (true);
+	return (false);
 }
 
 string	Character::getName(void) const
@@ -58,4 +68,14 @@ void	Character::recoverAP(void)
 	if (newap > 40)
 		newap = 40;
 	this->setAP(newap);
+}
+
+ostream&	operator<<(ostream& o, Character const & c1)
+{
+	if (c1.isWeaponEquipped())
+		o << c1.getName() << " has " << c1.getAP() << " AP and wields a " << c1.getWeaponName();
+	else
+		o << c1.getName() << " has " << c1.getAP() << " AP and is unarmed";
+
+	return (o);
 }

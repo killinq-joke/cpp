@@ -6,7 +6,7 @@
 /*   By: ztouzri <ztouzri@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/15 20:06:29 by ztouzri           #+#    #+#             */
-/*   Updated: 2021/07/16 03:13:05 by ztouzri          ###   ########.fr       */
+/*   Updated: 2021/07/16 03:39:27 by ztouzri          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,11 +30,14 @@ public:
 	void	recoverAP(void);
 	void	equip(AWeapon*);
 	void	attack(Enemy*);
+	bool	isWeaponEquipped(void) const;
 	string	getName(void) const;
 	string	getWeaponName(void) const;
 	int		getAP(void) const;
 	void	setAP(int ap);
 
 };
+
+ostream&	operator<<(ostream& o, Character const & c1);
 
 #endif
