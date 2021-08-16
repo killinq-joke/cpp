@@ -6,15 +6,15 @@
 /*   By: ztouzri <ztouzri@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/01 11:09:32 by ztouzri           #+#    #+#             */
-/*   Updated: 2021/08/16 18:50:55 by ztouzri          ###   ########.fr       */
+/*   Updated: 2021/08/16 19:00:55 by ztouzri          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "contacts.hpp"
 
-void	strformat(string str)
+void	strformat(std::string str)
 {
-	string cpy;
+	std::string cpy;
 	int	i;
 
 	i = str.size();
@@ -32,9 +32,9 @@ void	strformat(string str)
 	cout << cpy;
 }
 
-string	readString(istream& stream)
+std::string	readString(std::istream& stream)
 {
-	string	str;
+	std::string	str;
 
 	stream >> str;
 	return (str);
@@ -72,7 +72,7 @@ int		serviceSEARCH(PhoneBook *phonebook)
 {
 	int			i;
 	int			index;
-	string	strindex;
+	std::string	strindex;
 
 	cout << "     index| firstname|  lastname|  nickname|" << endl;
 	i = 0;
@@ -109,7 +109,7 @@ int		serviceSEARCH(PhoneBook *phonebook)
 int	main(void)
 {
 	PhoneBook	phonebook;
-	string	command;
+	std::string	command;
 
 	while (command != "EXIT")
 	{
