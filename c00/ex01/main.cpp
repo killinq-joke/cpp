@@ -6,7 +6,7 @@
 /*   By: ztouzri <ztouzri@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/01 11:09:32 by ztouzri           #+#    #+#             */
-/*   Updated: 2021/07/14 19:20:37 by ztouzri          ###   ########.fr       */
+/*   Updated: 2021/08/16 18:50:55 by ztouzri          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ void	strformat(string str)
 
 	i = str.size();
 	cpy = str.substr(0, 10);
-	if (i < 10)
+	if (i <= 10)
 	{
 		while (i < 10)
 		{
@@ -85,7 +85,7 @@ int		serviceSEARCH(PhoneBook *phonebook)
 		strformat(phonebook->contacts[i].getLastName());
 		cout << "|";
 		strformat(phonebook->contacts[i].getNickName());
-		cout << endl;
+		cout << "|" << endl;
 		i++;
 	}
 	cout << "Which index do you want to search:" << endl;

@@ -6,7 +6,7 @@
 /*   By: ztouzri <ztouzri@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/16 17:49:27 by ztouzri           #+#    #+#             */
-/*   Updated: 2021/07/16 21:41:46 by ztouzri          ###   ########.fr       */
+/*   Updated: 2021/07/16 21:56:55 by ztouzri          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ public:
 private:
 	int				_count;
 	//ISpaceMarine	*units;
-	vector<ISpaceMarien>	_units;
+	vector<ISpaceMarine>	_units;
 };
 
 #endif
