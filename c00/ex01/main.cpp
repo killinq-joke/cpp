@@ -6,7 +6,7 @@
 /*   By: ztouzri <ztouzri@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/01 11:09:32 by ztouzri           #+#    #+#             */
-/*   Updated: 2021/08/16 19:00:55 by ztouzri          ###   ########.fr       */
+/*   Updated: 2021/08/17 14:02:41 by ztouzri          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,20 +23,20 @@ void	strformat(std::string str)
 	{
 		while (i < 10)
 		{
-			cout << " ";
+			std::cout << " ";
 			i++;
 		}
 	}
 	else
 		cpy[9] = '.';
-	cout << cpy;
+	std::cout << cpy;
 }
 
 std::string	readString(std::istream& stream)
 {
 	std::string	str;
 
-	stream >> str;
+	std::getline(stream, str);
 	return (str);
 }
 
@@ -44,25 +44,25 @@ int		serviceADD(PhoneBook *phonebook)
 {
 	Contact		newcontact;
 
-	cout << "Enter first name:" << endl;
-	newcontact.setFirstName(readString(cin));
-	if (cin.eof())
+	std::cout << "Enter first name:" << std::endl;
+	newcontact.setFirstName(readString(std::cin));
+	if (std::cin.eof())
 		return (0);
-	cout << "Enter last name:" << endl;
-	newcontact.setLastName(readString(cin));
-	if (cin.eof())
+	std::cout << "Enter last name:" << std::endl;
+	newcontact.setLastName(readString(std::cin));
+	if (std::cin.eof())
 		return (0);
-	cout << "Enter nickname:" << endl;
-	newcontact.setNickName(readString(cin));
-	if (cin.eof())
+	std::cout << "Enter nickname:" << std::endl;
+	newcontact.setNickName(readString(std::cin));
+	if (std::cin.eof())
 		return (0);
-	cout << "Enter phonenumber:" << endl;
-	newcontact.setPhoneNumber(readString(cin));
-	if (cin.eof())
+	std::cout << "Enter phonenumber:" << std::endl;
+	newcontact.setPhoneNumber(readString(std::cin));
+	if (std::cin.eof())
 		return (0);
-	cout << "Enter darkest secret:" << endl;
-	newcontact.setDarkestSecret(readString(cin));
-	if (cin.eof())
+	std::cout << "Enter darkest secret:" << std::endl;
+	newcontact.setDarkestSecret(readString(std::cin));
+	if (std::cin.eof())
 		return (0);
 	phonebook->add(newcontact);
 	return (1);
@@ -74,34 +74,34 @@ int		serviceSEARCH(PhoneBook *phonebook)
 	int			index;
 	std::string	strindex;
 
-	cout << "     index| firstname|  lastname|  nickname|" << endl;
+	std::cout << "     index| firstname|  lastname|  nickname|" << std::endl;
 	i = 0;
 	while (i < phonebook->contactnum)
 	{
-		strformat(to_string(i + 1));
-		cout << "|";
+		strformat(std::to_string(i + 1));
+		std::cout << "|";
 		strformat(phonebook->contacts[i].getFirstName());
-		cout << "|";
+		std::cout << "|";
 		strformat(phonebook->contacts[i].getLastName());
-		cout << "|";
+		std::cout << "|";
 		strformat(phonebook->contacts[i].getNickName());
-		cout << "|" << endl;
+		std::cout << "|" << std::endl;
 		i++;
 	}
-	cout << "Which index do you want to search:" << endl;
-	cin >> strindex;
-	if (cin.peek() == EOF)
+	std::cout << "Which index do you want to search:" << std::endl;
+	std::getline(std::cin, strindex);
+	if (std::cin.eof())
 		return (0);
 	index = strindex[0] - '0';
 	if (strindex.size() != 1 || !isdigit(strindex[0]) || index < 1 || index > phonebook->contactnum)
-		cout << "NONE EXISTING INDEX" << endl;
+		std::cout << "NONE EXISTING INDEX" << std::endl;
 	else
 	{
-		cout << "first name: " << phonebook->contacts[index - 1].getFirstName() << endl;
-		cout << "last name: " << phonebook->contacts[index - 1].getLastName() << endl;
-		cout << "nickname: " << phonebook->contacts[index - 1].getNickName() << endl;
-		cout << "phone number: " << phonebook->contacts[index - 1].getPhoneNumber() << endl;
-		cout << "darkest secret: " << phonebook->contacts[index - 1].getDarkestSecret() << endl;
+		std::cout << "first name: " << phonebook->contacts[index - 1].getFirstName() << std::endl;
+		std::cout << "last name: " << phonebook->contacts[index - 1].getLastName() << std::endl;
+		std::cout << "nickname: " << phonebook->contacts[index - 1].getNickName() << std::endl;
+		std::cout << "phone number: " << phonebook->contacts[index - 1].getPhoneNumber() << std::endl;
+		std::cout << "darkest secret: " << phonebook->contacts[index - 1].getDarkestSecret() << std::endl;
 	}
 	return (1);
 }
@@ -113,8 +113,8 @@ int	main(void)
 
 	while (command != "EXIT")
 	{
-		cin >> command;
-		if (cin.eof())
+		std::getline(std::cin, command);
+		if (std::cin.eof())
 			return (1);
 		if (command == "ADD")
 		{

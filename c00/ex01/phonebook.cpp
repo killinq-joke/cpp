@@ -20,52 +20,52 @@ PhoneBook::~PhoneBook(void)
 {
 }
 
-string	Contact::getFirstName(void)
+std::string	Contact::getFirstName(void)
 {
 	return (this->_firstname);
 }
 
-string	Contact::getLastName(void)
+std::string	Contact::getLastName(void)
 {
 	return (this->_lastname);
 }
 
-string	Contact::getNickName(void)
+std::string	Contact::getNickName(void)
 {
 	return (this->_nickname);
 }
 
-string	Contact::getPhoneNumber(void)
+std::string	Contact::getPhoneNumber(void)
 {
 	return (this->_phonenumber);
 }
 
-string	Contact::getDarkestSecret(void)
+std::string	Contact::getDarkestSecret(void)
 {
 	return (this->_darkestsecret);
 }
 
-void	Contact::setFirstName(string firstname)
+void	Contact::setFirstName(std::string firstname)
 {
 	this->_firstname = firstname;
 }
 
-void	Contact::setLastName(string lastname)
+void	Contact::setLastName(std::string lastname)
 {
 	this->_lastname = lastname;
 }
 
-void	Contact::setNickName(string nickname)
+void	Contact::setNickName(std::string nickname)
 {
 	this->_nickname = nickname;
 }
 
-void	Contact::setPhoneNumber(string phonenumber)
+void	Contact::setPhoneNumber(std::string phonenumber)
 {
 	this->_phonenumber = phonenumber;
 }
 
-void	Contact::setDarkestSecret(string darkestsecret)
+void	Contact::setDarkestSecret(std::string darkestsecret)
 {
 	this->_darkestsecret = darkestsecret;
 }
