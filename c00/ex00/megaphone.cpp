@@ -12,6 +12,7 @@
 
 #include <unistd.h>
 #include <stdio.h>
+#include <iostream>
 
 int	ft_strlen(char *str)
 {
@@ -84,7 +85,7 @@ int	main(int ac, char **av)
 	char	basestr[] = "* LOUD AND UNBEARABLE FEEDBACK NOISE *";
 
 	if (ac < 2)
-		ft_putstr(basestr);
+		std::cout << basestr << std::endl;
 	else
 	{
 		i = 1;
@@ -95,7 +96,7 @@ int	main(int ac, char **av)
 				write(1, " ", 1);
 			i++;
 		}
+		std::cout << std::endl;
 	}
-	write(1, "\n", 1);
 	return (0);
 }
