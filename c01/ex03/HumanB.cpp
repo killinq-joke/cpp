@@ -6,15 +6,13 @@
 /*   By: ztouzri <ztouzri@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/08 20:21:48 by ztouzri           #+#    #+#             */
-/*   Updated: 2021/07/11 18:02:33 by ztouzri          ###   ########.fr       */
+/*   Updated: 2021/09/21 15:12:05 by ztouzri          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "HumanB.hpp"
 
-using namespace std;
-
-HumanB::HumanB(string name) {
+HumanB::HumanB(std::string name) {
 	this->name = name;
 	this->weapon = NULL;
 }
@@ -28,7 +26,7 @@ void	HumanB::setWeapon(Weapon weapon) {
 
 void	HumanB::attack(void) const {
 	if (!this->weapon)
-		cout << this->name << " doesn't attack" << endl;
+		std::cout << this->name << " doesn't attack" << std::endl;
 	else
-		cout << this->name << " attacks with his " << this->weapon->type << endl;
+		std::cout << this->name << " attacks with his " << this->weapon->type << std::endl;
 }

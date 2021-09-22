@@ -6,13 +6,13 @@
 #    By: ztouzri <ztouzri@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/07/08 16:34:01 by ztouzri           #+#    #+#              #
-#    Updated: 2021/07/12 14:25:07 by ztouzri          ###   ########.fr        #
+#    Updated: 2021/09/22 18:46:32 by ztouzri          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME	= karen
 CC		= clang++
-CFLAGS	= -Wall -Wextra -Werror
+CFLAGS	= -Wall -Wextra -Werror -g -fsanitize=address
 
 SRCS	= main.cpp Karen.cpp
 OBJS	= $(SRCS:cpp=o)
