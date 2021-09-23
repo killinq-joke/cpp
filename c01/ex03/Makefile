@@ -6,13 +6,13 @@
 #    By: ztouzri <ztouzri@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/07/08 16:34:01 by ztouzri           #+#    #+#              #
-#    Updated: 2021/07/11 16:42:28 by ztouzri          ###   ########.fr        #
+#    Updated: 2021/09/24 01:19:23 by ztouzri          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME	= weapon
 CC		= clang++
-CFLAGS	= -Wall -Wextra -Werror
+CFLAGS	= -Wall -Wextra -Werror -std=c++98
 
 SRCS	= main.cpp HumanB.cpp Weapon.cpp HumanA.cpp
 OBJS	= $(SRCS:cpp=o)

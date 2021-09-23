@@ -6,13 +6,13 @@
 #    By: ztouzri <ztouzri@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/07/08 16:34:01 by ztouzri           #+#    #+#              #
-#    Updated: 2021/07/11 18:04:32 by ztouzri          ###   ########.fr        #
+#    Updated: 2021/09/24 01:19:14 by ztouzri          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME	= replace
 CC		= clang++
-CFLAGS	= -Wall -Wextra -Werror
+CFLAGS	= -Wall -Wextra -Werror -std=c++98
 
 SRCS	= main.cpp
 OBJS	= $(SRCS:cpp=o)
