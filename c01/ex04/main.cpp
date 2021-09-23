@@ -24,7 +24,7 @@ void	runfile(std::fstream& file, size_t chartorun)
 	{
 		while (i < chartorun)
 		{
-			file >> noskipws >> c;
+			file >> std::noskipws >> c;
 			i++;
 		}
 	}
